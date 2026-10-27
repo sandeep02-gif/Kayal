@@ -28,6 +28,11 @@ android {
         }
     }
     buildTypes {
+        debug {
+            // installs side by side with the release Kayal (own data, own signature)
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-native-test"
+        }
         release {
             minifyEnabled false
             signingConfig signingConfigs.release
@@ -48,6 +53,12 @@ dependencies {
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
     implementation project(':capacitor-android')
+    // Native audio engine: AndroidX Media3 (ExoPlayer + MediaSession service for background playback)
+    def media3 = "1.9.4"
+    implementation "androidx.media3:media3-exoplayer:$media3"
+    implementation "androidx.media3:media3-exoplayer-hls:$media3"
+    implementation "androidx.media3:media3-session:$media3"
+    implementation "androidx.media3:media3-datasource:$media3"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"

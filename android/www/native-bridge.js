@@ -41,8 +41,96 @@ function collageBack(){var open=document.querySelectorAll('.sheet-wrap.show');if
 try{var App=plug('App');App&&App.addListener('backButton',function(ev){var handled=APP==='kayal'?kayalBack():APP==='collage'?collageBack():false;log('back handled='+handled);
   if(handled)return;if(ev&&ev.canGoBack){history.back();return}
   var now=Date.now();if(now-lastBack<2000){if(APP==='kayal'&&App.minimizeApp){App.minimizeApp()}else{App.exitApp()}}else{lastBack=now;toast(APP==='kayal'?'Press back again to leave (music keeps playing)':'Press back again to exit')}})}catch(e){log('back listener failed '+e.message)}
-/* 5. Kayal: Media Session API -> native media session + foreground playback service */
-if(APP==='kayal'){var MS=function(){return plug('MediaSession')};var meta=null,state='none',lastPos=0,lastP=-1;
+/* 5. Kayal: native audio engine (Media3 ExoPlayer + MediaSessionService, via the KayalPlayer plugin).
+   Kayal's JS player talks to an HTMLAudioElement-compatible shim (window.__nativeAudio, wired in by sync_android.py),
+   so queue / shuffle / repeat / sleep timer logic is unchanged while the audio itself plays in a foreground service
+   (background playback, media notification, lock-screen controls). If the plugin is missing it falls back to the
+   old behaviour (WebView <audio> + @capgo/capacitor-media-session). */
+var KP=null;try{KP=(APP==='kayal')?plug('KayalPlayer'):null}catch(e){KP=null}
+if(APP==='kayal'&&KP){
+  window.__native.player=KP;var curMeta=null,handlers={},notifAsked=false;
+  function artOK(m){var a=((m&&m.artwork)||[]).filter(function(x){return x&&/^https?:/.test(x.src)&&!/^https?:\/\/(localhost|127\.)/.test(x.src)})[0];return a?a.src:''}
+  function MM(o){o=o||{};this.title=o.title||'';this.artist=o.artist||'';this.album=o.album||'';this.artwork=o.artwork||[]}
+  window.MediaMetadata=MM;
+  var shim={get metadata(){return curMeta},set metadata(m){curMeta=m;if(!m)return;
+      try{KP.setMetadata({title:m.title||'',artist:m.artist||'',album:m.album||'',artwork:artOK(m)}).catch(function(e){log('meta '+e.message)})}catch(e){}},
+    playbackState:'none',setActionHandler:function(a,h){if(h)handlers[a]=h;else delete handlers[a]},setPositionState:function(){}};
+  try{Object.defineProperty(navigator,'mediaSession',{value:shim,configurable:true})}catch(e){log('mediaSession shim failed '+e.message)}
+  /* notification / lock-screen / headset skip buttons -> Kayal's own next/prev logic */
+  KP.addListener('action',function(e){var h=handlers[e&&e.action];log('action '+(e&&e.action));if(h)try{h({action:e.action})}catch(x){}});
+  function bytesB64(blob){return b64(blob)}
+  async function resolveUri(u){
+    if(!/^blob:/.test(u))return u;
+    var blob=await (await fetch(u)).blob(),ext=((blob.type||'audio/mpeg').split('/')[1]||'mp3').split(';')[0].replace(/[^a-z0-9]/gi,'')||'mp3';
+    var name='t'+Date.now()+'.'+ext,CH=3*1024*1024,uri='';await KP.clearCache().catch(function(){});
+    for(var o=0,i=0;o<blob.size;o+=CH,i++){var r=await KP.writeCache({name:name,data:await bytesB64(blob.slice(o,o+CH)),append:i>0});uri=r.uri}
+    return uri}
+  class NativeAudio extends EventTarget{
+    constructor(){super();this._src='';this._t=0;this._d=NaN;this._paused=true;this._vol=1;this._muted=false;this.error=null;this.preload='auto';this.playbackRate=1;this.readyState=0;this.ended=false;
+      this._tok=0;this._lock=0;this._ready=Promise.resolve();this._pl=false;this._err='';this.hlsHint=false;this.nativeState=null}
+    _e(n){try{this.dispatchEvent(new Event(n))}catch(e){}}
+    get src(){return this._src}
+    set src(v){v=String(v||'');if(!v){this.removeAttribute('src');return}
+      var self=this,tok=++this._tok,hls=!!this.hlsHint||/\.m3u8(\?|$)/i.test(v);this.hlsHint=false;
+      this._src=v;this.error=null;this.ended=false;this._t=0;this._d=NaN;this._paused=true;this._pl=false;this._err='';this.readyState=0;this._e('emptied');this._e('loadstart');
+      var m=curMeta||{};
+      this._ready=resolveUri(v).then(function(uri){if(tok!==self._tok)return;
+        return KP.load({url:uri,hls:hls,autoplay:false,title:m.title||'',artist:m.artist||'',album:m.album||'',artwork:artOK(m)})});
+      this._ready.catch(function(e){log('load failed '+(e&&e.message))})}
+    getAttribute(n){return n==='src'&&this._src?this._src:null}
+    setAttribute(n,v){if(n==='src')this.src=v}
+    removeAttribute(n){if(n!=='src')return;this._tok++;this._src='';this._t=0;this._d=NaN;this._paused=true;this._pl=false;this.ended=false;this._ready=Promise.resolve();try{KP.stop().catch(function(){})}catch(e){}}
+    load(){}
+    canPlayType(){return 'maybe'}
+    get paused(){return this._paused}
+    get currentTime(){return this._t}
+    set currentTime(v){v=+v;if(!isFinite(v)||v<0)v=0;this._t=v;var tok=this._tok;this._e('seeking');this._ready.then(function(){return KP.seekTo({position:v})}).catch(function(){});this._e('timeupdate')}
+    get duration(){return this._d}
+    get volume(){return this._vol}
+    set volume(v){this._vol=Math.max(0,Math.min(1,+v||0));this._pushVol()}
+    get muted(){return this._muted}
+    set muted(v){this._muted=!!v;this._pushVol()}
+    _pushVol(){try{KP.setVolume({volume:this._vol,muted:this._muted}).catch(function(){})}catch(e){}}
+    play(){var self=this;if(!this._src)return Promise.reject(new DOMException('No source','NotSupportedError'));
+      var tok=this._tok;this._paused=false;this._lock=Date.now();this._e('play');
+      if(!notifAsked){notifAsked=true;KP.requestNotifications().catch(function(){})}
+      return this._ready.then(function(){if(tok!==self._tok)throw new DOMException('Superseded','AbortError');return KP.play()}).then(function(){},function(e){
+        if(e&&e.name==='AbortError')throw e;self._paused=true;var er=new Error((e&&e.message)||'native load failed');er.name='NotSupportedError';throw er})}
+    pause(){if(!this._src)return;this._paused=true;this._lock=Date.now();this._e('pause');this._ready.then(function(){return KP.pause()}).catch(function(){})}
+    /* native -> element state */
+    _apply(s){if(!this._src)return;this.nativeState=s;var prevT=this._t;this._t=s.position||0;
+      if(s.state!=='idle')this.readyState=s.state==='ready'?4:2;
+      var d=s.duration>0?s.duration:(s.state==='ready'?Infinity:NaN);
+      if(!(d===this._d||(isNaN(d)&&isNaN(this._d)))){var first=isNaN(this._d);this._d=d;if(!isNaN(d)){if(first)this._e('loadedmetadata');this._e('durationchange');this._e('canplay')}}
+      var wantPlay=!!s.playWhenReady&&s.state!=='ended',recent=Date.now()-this._lock<800;
+      if(!recent&&s.state!=='idle'){if(wantPlay&&this._paused){this._paused=false;this._e('play')}else if(!wantPlay&&!this._paused&&s.state!=='ended'){this._paused=true;this._e('pause')}}
+      if(s.playing&&!this._pl){this._pl=true;this._e('playing')}else if(!s.playing&&this._pl){this._pl=false;if(s.state==='buffering')this._e('waiting')}
+      if(s.state==='ended'&&!this.ended){this.ended=true;this._paused=true;this._pl=false;this._e('pause');this._e('ended')}
+      else if(s.state!=='ended')this.ended=false;
+      if(s.error&&s.error!==this._err){this._err=s.error;this.error={code:4,message:s.error};this._e('error')}
+      if(s.playing||this._t!==prevT)this._e('timeupdate')}
+  }
+  var NA=null;
+  window.__nativeAudio=function(realEl){if(!NA){NA=new NativeAudio();KP.addListener('state',function(s){if(NA)NA._apply(s)});KP.getState().catch(function(){})}return NA};
+  /* native equaliser (Android audiofx on the player's audio session). The WebAudio EQ cannot touch native audio. */
+  window.__nativeEqOK=true;
+  window.__nativeEqApply=function(eq){try{KP.setEq({on:!!eq.on,gains:eq.g,pre:eq.pre||0}).then(function(r){window.__nativeEqOK=!!(r&&r.supported)}).catch(function(){window.__nativeEqOK=false})}catch(e){}};
+  /* local music: system file picker -> "On this device" playlist */
+  function pickLocal(){KP.pickAudio().then(function(r){var files=(r&&r.files)||[];if(!files.length)return;var k=window.kayal;if(!k){toast('Kayal is still loading');return}
+      var pl=k.S.playlists.find(function(p){return p.name==='On this device'})||k.createPlaylist('On this device');
+      var have={};pl.tracks.forEach(function(t){have[t.id]=1});var first=-1,added=0;
+      files.forEach(function(f){var id='l:'+f.uri;if(have[id]){if(first<0)first=pl.tracks.findIndex(function(t){return t.id===id});return}
+        pl.tracks.push({src:'local',id:id,title:f.title,artist:f.artist||'Unknown artist',art:'',alt:[],dur:f.duration||0,url:f.uri,aid:'',live:false,lic:'',dl:0,hls:0,pg:'',uid:'',gn:'',ts:Date.now(),cr:''});
+        if(first<0)first=pl.tracks.length-1;added++});
+      k.save();k.renderLibrary();toast(added?('Added '+added+' file'+(added===1?'':'s')+' to “On this device”'):'Already in “On this device”');
+      k.player.playList(pl.tracks,Math.max(0,first))}).catch(function(e){log('pick failed '+(e&&e.message));toast('Could not open files')})}
+  window.__native.pickLocal=pickLocal;
+  function addLocalBtn(){var np=document.getElementById('newPl');if(!np||document.getElementById('addLocal'))return;
+    var w=document.createElement('div');w.style.cssText='display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end';np.parentNode.insertBefore(w,np);
+    var b=document.createElement('button');b.className='btn';b.id='addLocal';b.textContent='Add local music';b.onclick=pickLocal;w.appendChild(b);w.appendChild(np)}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addLocalBtn);else addLocalBtn();
+  log('native player ready')
+}else if(APP==='kayal'){var MS=function(){return plug('MediaSession')};var meta=null,state='none',lastPos=0,lastP=-1;
   function MM(o){o=o||{};this.title=o.title||'';this.artist=o.artist||'';this.album=o.album||'';this.artwork=o.artwork||[]}
   window.MediaMetadata=MM;
   var shim={get metadata(){return meta},set metadata(m){meta=m;if(!m)return;var art=(m.artwork||[]).filter(function(a){return a&&/^https?:/.test(a.src)});

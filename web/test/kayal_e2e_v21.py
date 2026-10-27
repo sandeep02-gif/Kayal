@@ -2,7 +2,7 @@
 import asyncio,json,os,sys,time
 sys.path.insert(0,os.path.dirname(__file__))
 from playwright.async_api import async_playwright
-URL='http://127.0.0.1:8091/index.html';ROOT='/workspace/music-player';SS=ROOT+'/screenshots'
+URL='http://127.0.0.1:8091/index.html';ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)));SS=ROOT+'/screenshots'
 R=[];NUM={};VER='2.2.0'
 def check(n,ok,d=''):
     R.append((n,bool(ok),str(d)[:400]));print(('PASS ' if ok else 'FAIL ')+n+(' – '+str(d)[:400] if d!='' else ''),flush=True)

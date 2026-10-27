@@ -1,6 +1,6 @@
 import asyncio,json,os,sys,time
 from playwright.async_api import async_playwright
-URL='http://127.0.0.1:8091/index.html';ROOT='/workspace/music-player';SS=ROOT+'/screenshots';DL='/tmp/kayal_dl';os.makedirs(DL,exist_ok=True)
+URL='http://127.0.0.1:8091/index.html';ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)));SS=ROOT+'/screenshots';DL='/tmp/kayal_dl';os.makedirs(DL,exist_ok=True)
 R=[];NUM={};NOISE=[]
 def check(n,ok,d=''):
     R.append((n,bool(ok),str(d)[:300]));print(('PASS ' if ok else 'FAIL ')+n+(' – '+str(d)[:300] if d!='' else ''),flush=True)

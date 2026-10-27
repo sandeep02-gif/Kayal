@@ -1,7 +1,7 @@
 # Kayal 2.2 tests: glass interface, theme, artwork colours, YouTube Music hand-off tab. Live network for playback bits.
 import asyncio,json,os,sys,time,re
 from playwright.async_api import async_playwright
-URL='http://127.0.0.1:8091/index.html';ROOT='/workspace/music-player';SS=ROOT+'/screenshots'
+URL='http://127.0.0.1:8091/index.html';ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)));SS=ROOT+'/screenshots'
 R=[]
 def check(n,ok,d=''):
     R.append((n,bool(ok),str(d)[:400]));print(('PASS ' if ok else 'FAIL ')+n+(' – '+str(d)[:400] if d!='' else ''),flush=True)
