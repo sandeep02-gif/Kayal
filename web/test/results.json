@@ -1,0 +1,996 @@
+{
+ "results": [
+  [
+   "[412x900 mobile] Home: Audius trending + India radio + Malayalam radio + Archive rows load live",
+   true,
+   "{'trending': 20, 'radioIndia': 20, 'radioMalayalam': 20, 'archive': 8}"
+  ],
+  [
+   "[412x900 mobile] Home: trending by genre (Lo-Fi)",
+   true,
+   "20"
+  ],
+  [
+   "[412x900 mobile] Home: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Home: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[412x900 mobile] Search All \"jazz\": results from Audius, Archive and Radio",
+   true,
+   "{'apl': 10, 'aus': 10, 'audius': 23, 'archive': 20, 'commons': 19, 'radio': 30}"
+  ],
+  [
+   "[412x900 mobile] Results show artwork, title, artist, duration",
+   true,
+   "{'art': True, 'title': 'Siberian Jazz', 'artist': 'EIME', 'dur': '1:55'}"
+  ],
+  [
+   "[412x900 mobile] Source tabs: Audius \"lofi\" / Archive \"carnatic\" / Radio \"malayalam\" each return results",
+   true,
+   "{'audius': {'aus': 10, 'apl': 10, 'audius': 22}, 'archive': {'archive': 20}, 'radio': {'radio': 22}}"
+  ],
+  [
+   "[412x900 mobile] Search is debounced (13 keystrokes \u2192 \u22642 track-search requests)",
+   true,
+   "0"
+  ],
+  [
+   "[412x900 mobile] Search: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Search: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[412x900 mobile] Audius track plays (currentTime advances)",
+   true,
+   "['kirbytape mix vol. 13 - lofi house edition', 0.29, 1.8]"
+  ],
+  [
+   "[412x900 mobile] Media Session metadata + playbackState set (lock screen / notification)",
+   true,
+   "{'t': 'kirbytape mix vol. 13 - lofi house edition', 'a': 'omgkirby', 'st': 'playing'}"
+  ],
+  [
+   "[412x900 mobile] Mini player visible with track",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Next plays the next queued track",
+   true,
+   "[0, 1, 0.12, 1.63]"
+  ],
+  [
+   "[412x900 mobile] Now-playing view opens with artwork + controls",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Now playing: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Now playing: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[412x900 mobile] Play/pause button",
+   true,
+   "[True, False]"
+  ],
+  [
+   "[412x900 mobile] Seek bar jumps to 50%",
+   true,
+   "0.5"
+  ],
+  [
+   "[412x900 mobile] Volume slider",
+   true,
+   "0.35"
+  ],
+  [
+   "[412x900 mobile] Shuffle + repeat (off\u2192all\u2192one) toggles",
+   true,
+   "[True, 'one']"
+  ],
+  [
+   "[412x900 mobile] Sleep timer sets (countdown) and turns off",
+   true,
+   "14:59"
+  ],
+  [
+   "[412x900 mobile] Like from now playing",
+   true,
+   "1"
+  ],
+  [
+   "[412x900 mobile] Queue sheet lists the queue",
+   true,
+   "22"
+  ],
+  [
+   "[412x900 mobile] Queue reorder (move up)",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Queue remove",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Android back button closes the sheet first",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Menu: Play next + Add to queue",
+   true,
+   "['Chill Out (live set)', 'Chill Out (live set)', 'Chill  Love set', 'Chill  Love set']"
+  ],
+  [
+   "[412x900 mobile] Create playlist + add song (via menu)",
+   true,
+   "[['Kerala evenings', 1]]"
+  ],
+  [
+   "[412x900 mobile] Like from a result row",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Internet Archive recording plays",
+   true,
+   "['India meets Classic presents evening and night ragas (part 2 of 2)', 0.02, 1.54]"
+  ],
+  [
+   "[412x900 mobile] Live radio station plays (auto-skips dead streams)",
+   true,
+   "['KJ Yesudas Malayalam radio', 0.09, 2.11]"
+  ],
+  [
+   "[412x900 mobile] Library shows liked, playlists, recently played, search history",
+   true,
+   "{'liked': 'Playlist \u00b7 2 songs', 'pls': ['Kerala evenings'], 'recent': 4, 'hist': 6}"
+  ],
+  [
+   "[412x900 mobile] Library: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] Library: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[412x900 mobile] Likes, playlists, recents, history and queue persist after reload",
+   true,
+   "{'liked': 2, 'pls': [['Kerala evenings', 1]], 'recent': 4, 'hist': 6, 'q': 22, 'mini': True}"
+  ],
+  [
+   "[412x900 mobile] Rename playlist",
+   true,
+   "['Monsoon mix', 'Monsoon mix']"
+  ],
+  [
+   "[412x900 mobile] Create + delete playlist",
+   true,
+   ""
+  ],
+  [
+   "[412x900 mobile] JSON export \u2192 import round trip (no duplicates on re-import, persists)",
+   true,
+   "['kayal-library-2026-10-27.json', {'liked': 2, 'pls': [['Monsoon mix', 1]], 'hist': 6}, {'liked': 2, 'pls': 1}]"
+  ],
+  [
+   "[412x900 mobile] Stream error \u2192 toast + skip to next track",
+   true,
+   "[0.32, 1.84]"
+  ],
+  [
+   "[412x900 mobile] Offline: app shell opens from the service worker, library intact, friendly errors",
+   true,
+   "{'banner': True, 'liked': 2, 'err': True}"
+  ],
+  [
+   "[412x900 mobile] PWA manifest (standalone, 192/512 icons) + service worker controlling page",
+   true,
+   "{'n': 'Kayal \u2014 free music & radio', 'd': 'standalone', 'icons': ['192x192', '512x512', '512x512', 'any']}"
+  ],
+  [
+   "[412x900 mobile] Zero console errors from the app (pageerrors / app console.error)",
+   true,
+   "[]"
+  ],
+  [
+   "[360x780 mobile] Home: Audius trending + India radio + Malayalam radio + Archive rows load live",
+   true,
+   "{'trending': 20, 'radioIndia': 20, 'radioMalayalam': 20, 'archive': 8}"
+  ],
+  [
+   "[360x780 mobile] Home: trending by genre (Lo-Fi)",
+   true,
+   "20"
+  ],
+  [
+   "[360x780 mobile] Home: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Home: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[360x780 mobile] Search All \"jazz\": results from Audius, Archive and Radio",
+   true,
+   "{'commons': 19, 'archive': 20, 'aus': 10, 'apl': 10, 'audius': 23, 'radio': 30}"
+  ],
+  [
+   "[360x780 mobile] Results show artwork, title, artist, duration",
+   true,
+   "{'art': True, 'title': 'Siberian Jazz', 'artist': 'EIME', 'dur': '1:55'}"
+  ],
+  [
+   "[360x780 mobile] Source tabs: Audius \"lofi\" / Archive \"carnatic\" / Radio \"malayalam\" each return results",
+   true,
+   "{'audius': {'aus': 10, 'apl': 10, 'audius': 22}, 'archive': {'archive': 20}, 'radio': {'radio': 22}}"
+  ],
+  [
+   "[360x780 mobile] Search is debounced (13 keystrokes \u2192 \u22642 track-search requests)",
+   true,
+   "0"
+  ],
+  [
+   "[360x780 mobile] Search: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Search: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[360x780 mobile] Audius track plays (currentTime advances)",
+   true,
+   "['kirbytape mix vol. 13 - lofi house edition', 0.43, 1.94]"
+  ],
+  [
+   "[360x780 mobile] Media Session metadata + playbackState set (lock screen / notification)",
+   true,
+   "{'t': 'kirbytape mix vol. 13 - lofi house edition', 'a': 'omgkirby', 'st': 'playing'}"
+  ],
+  [
+   "[360x780 mobile] Mini player visible with track",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Next plays the next queued track",
+   true,
+   "[0, 1, 0.38, 1.9]"
+  ],
+  [
+   "[360x780 mobile] Now-playing view opens with artwork + controls",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Now playing: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Now playing: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[360x780 mobile] Play/pause button",
+   true,
+   "[True, False]"
+  ],
+  [
+   "[360x780 mobile] Seek bar jumps to 50%",
+   true,
+   "0.5"
+  ],
+  [
+   "[360x780 mobile] Volume slider",
+   true,
+   "0.35"
+  ],
+  [
+   "[360x780 mobile] Shuffle + repeat (off\u2192all\u2192one) toggles",
+   true,
+   "[True, 'one']"
+  ],
+  [
+   "[360x780 mobile] Sleep timer sets (countdown) and turns off",
+   true,
+   "14:58"
+  ],
+  [
+   "[360x780 mobile] Like from now playing",
+   true,
+   "1"
+  ],
+  [
+   "[360x780 mobile] Queue sheet lists the queue",
+   true,
+   "22"
+  ],
+  [
+   "[360x780 mobile] Queue reorder (move up)",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Queue remove",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Android back button closes the sheet first",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Menu: Play next + Add to queue",
+   true,
+   "['Chill Out (live set)', 'Chill Out (live set)', 'Chill  Love set', 'Chill  Love set']"
+  ],
+  [
+   "[360x780 mobile] Create playlist + add song (via menu)",
+   true,
+   "[['Kerala evenings', 1]]"
+  ],
+  [
+   "[360x780 mobile] Like from a result row",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Internet Archive recording plays",
+   true,
+   "['\"Tzuey Ueng Charn\" (The Strumming Of An Elderly Gentleman In A State Of Refined Intoxication); \"Lanq Taur Sha\" (Waves Washing The Beach); \"Nan Jinn Gong\" (Entering The Palace)', 0.14, 1.65]"
+  ],
+  [
+   "[360x780 mobile] Live radio station plays (auto-skips dead streams)",
+   true,
+   "['KJ Yesudas Malayalam radio', 0.03, 2.05]"
+  ],
+  [
+   "[360x780 mobile] Library shows liked, playlists, recently played, search history",
+   true,
+   "{'liked': 'Playlist \u00b7 2 songs', 'pls': ['Kerala evenings'], 'recent': 4, 'hist': 6}"
+  ],
+  [
+   "[360x780 mobile] Library: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[360x780 mobile] Library: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[360x780 mobile] Likes, playlists, recents, history and queue persist after reload",
+   true,
+   "{'liked': 2, 'pls': [['Kerala evenings', 1]], 'recent': 4, 'hist': 6, 'q': 22, 'mini': True}"
+  ],
+  [
+   "[360x780 mobile] Stream error \u2192 toast + skip to next track",
+   true,
+   "[0.36, 1.87]"
+  ],
+  [
+   "[360x780 mobile] Offline: app shell opens from the service worker, library intact, friendly errors",
+   true,
+   "{'banner': True, 'liked': 2, 'err': True}"
+  ],
+  [
+   "[360x780 mobile] PWA manifest (standalone, 192/512 icons) + service worker controlling page",
+   true,
+   "{'n': 'Kayal \u2014 free music & radio', 'd': 'standalone', 'icons': ['192x192', '512x512', '512x512', 'any']}"
+  ],
+  [
+   "[360x780 mobile] Zero console errors from the app (pageerrors / app console.error)",
+   true,
+   "[]"
+  ],
+  [
+   "[1366x860 desktop] Home: Audius trending + India radio + Malayalam radio + Archive rows load live",
+   true,
+   "{'trending': 20, 'radioIndia': 20, 'radioMalayalam': 20, 'archive': 8}"
+  ],
+  [
+   "[1366x860 desktop] Home: trending by genre (Lo-Fi)",
+   true,
+   "20"
+  ],
+  [
+   "[1366x860 desktop] Home: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Home: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[1366x860 desktop] Search All \"jazz\": results from Audius, Archive and Radio",
+   true,
+   "{'archive': 20, 'aus': 10, 'apl': 10, 'audius': 23, 'commons': 19, 'radio': 30}"
+  ],
+  [
+   "[1366x860 desktop] Results show artwork, title, artist, duration",
+   true,
+   "{'art': True, 'title': 'Siberian Jazz', 'artist': 'EIME', 'dur': '1:55'}"
+  ],
+  [
+   "[1366x860 desktop] Source tabs: Audius \"lofi\" / Archive \"carnatic\" / Radio \"malayalam\" each return results",
+   true,
+   "{'audius': {'aus': 10, 'apl': 10, 'audius': 22}, 'archive': {'archive': 20}, 'radio': {'radio': 22}}"
+  ],
+  [
+   "[1366x860 desktop] Search is debounced (13 keystrokes \u2192 \u22642 track-search requests)",
+   true,
+   "0"
+  ],
+  [
+   "[1366x860 desktop] Search: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Search: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[1366x860 desktop] Audius track plays (currentTime advances)",
+   true,
+   "['kirbytape mix vol. 13 - lofi house edition', 0.0, 1.98]"
+  ],
+  [
+   "[1366x860 desktop] Media Session metadata + playbackState set (lock screen / notification)",
+   true,
+   "{'t': 'kirbytape mix vol. 13 - lofi house edition', 'a': 'omgkirby', 'st': 'playing'}"
+  ],
+  [
+   "[1366x860 desktop] Mini player visible with track",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Next plays the next queued track",
+   true,
+   "[0, 1, 0.01, 1.52]"
+  ],
+  [
+   "[1366x860 desktop] Now-playing view opens with artwork + controls",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Now playing: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Now playing: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[1366x860 desktop] Play/pause button",
+   true,
+   "[True, False]"
+  ],
+  [
+   "[1366x860 desktop] Seek bar jumps to 50%",
+   true,
+   "0.5"
+  ],
+  [
+   "[1366x860 desktop] Volume slider",
+   true,
+   "0.35"
+  ],
+  [
+   "[1366x860 desktop] Shuffle + repeat (off\u2192all\u2192one) toggles",
+   true,
+   "[True, 'one']"
+  ],
+  [
+   "[1366x860 desktop] Sleep timer sets (countdown) and turns off",
+   true,
+   "14:58"
+  ],
+  [
+   "[1366x860 desktop] Like from now playing",
+   true,
+   "1"
+  ],
+  [
+   "[1366x860 desktop] Queue sheet lists the queue",
+   true,
+   "22"
+  ],
+  [
+   "[1366x860 desktop] Queue reorder (move up)",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Queue remove",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Android back button closes the sheet first",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Menu: Play next + Add to queue",
+   true,
+   "['Chill Out (live set)', 'Chill Out (live set)', 'Chill  Love set', 'Chill  Love set']"
+  ],
+  [
+   "[1366x860 desktop] Create playlist + add song (via menu)",
+   true,
+   "[['Kerala evenings', 1]]"
+  ],
+  [
+   "[1366x860 desktop] Like from a result row",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Internet Archive recording plays",
+   true,
+   "['\"Tzuey Ueng Charn\" (The Strumming Of An Elderly Gentleman In A State Of Refined Intoxication); \"Lanq Taur Sha\" (Waves Washing The Beach); \"Nan Jinn Gong\" (Entering The Palace)', 0.04, 1.56]"
+  ],
+  [
+   "[1366x860 desktop] Live radio station plays (auto-skips dead streams)",
+   true,
+   "['KJ Yesudas Malayalam radio', 0.29, 2.31]"
+  ],
+  [
+   "[1366x860 desktop] Library shows liked, playlists, recently played, search history",
+   true,
+   "{'liked': 'Playlist \u00b7 2 songs', 'pls': ['Kerala evenings'], 'recent': 4, 'hist': 6}"
+  ],
+  [
+   "[1366x860 desktop] Library: no horizontal scroll",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Library: touch targets >=44px",
+   true,
+   "[]"
+  ],
+  [
+   "[1366x860 desktop] Likes, playlists, recents, history and queue persist after reload",
+   true,
+   "{'liked': 2, 'pls': [['Kerala evenings', 1]], 'recent': 4, 'hist': 6, 'q': 22, 'mini': True}"
+  ],
+  [
+   "[1366x860 desktop] Keyboard: Space play/pause, \u2192 seek +5 s, \u2193 volume, Shift+\u2192 next",
+   true,
+   "[True, False, 5.13, 35, 30, 0, 1]"
+  ],
+  [
+   "[1366x860 desktop] Desktop: sidebar nav + full player bar",
+   true,
+   ""
+  ],
+  [
+   "[1366x860 desktop] Stream error \u2192 toast + skip to next track",
+   true,
+   "[0.2, 1.71]"
+  ],
+  [
+   "[1366x860 desktop] Offline: app shell opens from the service worker, library intact, friendly errors",
+   true,
+   "{'banner': True, 'liked': 2, 'err': True}"
+  ],
+  [
+   "[1366x860 desktop] PWA manifest (standalone, 192/512 icons) + service worker controlling page",
+   true,
+   "{'n': 'Kayal \u2014 free music & radio', 'd': 'standalone', 'icons': ['192x192', '512x512', '512x512', 'any']}"
+  ],
+  [
+   "[1366x860 desktop] Zero console errors from the app (pageerrors / app console.error)",
+   true,
+   "[]"
+  ]
+ ],
+ "numbers": {
+  "home": {
+   "412x900 mobile": {
+    "trending": 20,
+    "radioIndia": 20,
+    "radioMalayalam": 20,
+    "archive": 8
+   },
+   "360x780 mobile": {
+    "trending": 20,
+    "radioIndia": 20,
+    "radioMalayalam": 20,
+    "archive": 8
+   },
+   "1366x860 desktop": {
+    "trending": 20,
+    "radioIndia": 20,
+    "radioMalayalam": 20,
+    "archive": 8
+   }
+  },
+  "search": {
+   "412x900 mobile": {
+    "all:jazz": {
+     "apl": 10,
+     "aus": 10,
+     "audius": 23,
+     "archive": 20,
+     "commons": 19,
+     "radio": 30
+    },
+    "audius:lofi": {
+     "aus": 10,
+     "apl": 10,
+     "audius": 22
+    },
+    "archive:carnatic": {
+     "archive": 20
+    },
+    "radio:malayalam": {
+     "radio": 22
+    }
+   },
+   "360x780 mobile": {
+    "all:jazz": {
+     "commons": 19,
+     "archive": 20,
+     "aus": 10,
+     "apl": 10,
+     "audius": 23,
+     "radio": 30
+    },
+    "audius:lofi": {
+     "aus": 10,
+     "apl": 10,
+     "audius": 22
+    },
+    "archive:carnatic": {
+     "archive": 20
+    },
+    "radio:malayalam": {
+     "radio": 22
+    }
+   },
+   "1366x860 desktop": {
+    "all:jazz": {
+     "archive": 20,
+     "aus": 10,
+     "apl": 10,
+     "audius": 23,
+     "commons": 19,
+     "radio": 30
+    },
+    "audius:lofi": {
+     "aus": 10,
+     "apl": 10,
+     "audius": 22
+    },
+    "archive:carnatic": {
+     "archive": 20
+    },
+    "radio:malayalam": {
+     "radio": 22
+    }
+   }
+  },
+  "play": {
+   "412x900 mobile": {
+    "audius": [
+     "kirbytape mix vol. 13 - lofi house edition",
+     0.29,
+     1.8
+    ],
+    "archive": [
+     "India meets Classic presents evening and night ragas (part 2 of 2)",
+     0.02,
+     1.54,
+     "https://archive.org/download/IMC-Evening-Night-Ragas-part4-2006/Part2-1-IMC-pres"
+    ],
+    "radio": [
+     "KJ Yesudas Malayalam radio",
+     0.09,
+     2.11
+    ]
+   },
+   "360x780 mobile": {
+    "audius": [
+     "kirbytape mix vol. 13 - lofi house edition",
+     0.43,
+     1.94
+    ],
+    "archive": [
+     "\"Tzuey Ueng Charn\" (The Strumming Of An Elderly Gentleman In A State Of Refined Intoxication); \"Lanq Taur Sha\" (Waves Washing The Beach); \"Nan Jinn Gong\" (Entering The Palace)",
+     0.14,
+     1.65,
+     "https://archive.org/download/lp_ancient-and-oriental-music_various/disc1/01.01.%"
+    ],
+    "radio": [
+     "KJ Yesudas Malayalam radio",
+     0.03,
+     2.05
+    ]
+   },
+   "1366x860 desktop": {
+    "audius": [
+     "kirbytape mix vol. 13 - lofi house edition",
+     0.0,
+     1.98
+    ],
+    "archive": [
+     "\"Tzuey Ueng Charn\" (The Strumming Of An Elderly Gentleman In A State Of Refined Intoxication); \"Lanq Taur Sha\" (Waves Washing The Beach); \"Nan Jinn Gong\" (Entering The Palace)",
+     0.04,
+     1.56,
+     "https://archive.org/download/lp_ancient-and-oriental-music_various/disc1/01.01.%"
+    ],
+    "radio": [
+     "KJ Yesudas Malayalam radio",
+     0.29,
+     2.31
+    ]
+   }
+  }
+ },
+ "noise": [
+  {
+   "viewport": "412x900 mobile",
+   "remote_resource_errors": 29,
+   "remote_kinds": [
+    "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_UNSAFE_PORT",
+    "Failed to load resource: the server responded with a status "
+   ],
+   "failed_requests_sample": [
+    [
+     "image",
+     "https://prasarbharati.gov.in/wp-content/uploads/2020/04/cropped-pblogo-180x180.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://shaivam.org/images/shaivam-logo-2015.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://v.audius.rickyrombo.com/content/Qmaku4MLRtABKqryqNkwq4bEaA141n4Ch2iMNrw7gtSNoi/480",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://v.audius.rickyrombo.com/content/QmWioZBM7nfL5ookCj8HqWmtNMa481MGkWPA2GoRDssHz9/480",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://v.audius.rickyrombo.com/content/01HS9W1R23A28N8F30GS3FMAY6/480x480.jpg",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://audius.zeogrid.com/content/QmQAacrnozsHg3uqXBzHc8MYj1vVc7PofJtZMg4cy2pgCb/480x480.",
+     "net::ERR_CONNECTION_CLOSED"
+    ]
+   ],
+   "http_errors_sample": [
+    [
+     "image",
+     500,
+     "http://mirchi.in/favicon-196x196.png"
+    ],
+    [
+     "image",
+     503,
+     "https://cn1.mainnet.audiusindex.org/content/QmUNwR7jspJr49PsRMTi8weCBTWrnxMHAdCvrW2kV3Qfwd"
+    ],
+    [
+     "image",
+     503,
+     "https://cn1.mainnet.audiusindex.org/content/QmUNwR7jspJr49PsRMTi8weCBTWrnxMHAdCvrW2kV3Qfwd"
+    ],
+    [
+     "image",
+     502,
+     "https://audius-nodes.com/content/QmTv5VuvdrgB2jvXBS3R5cnJ74LwwPEDa9CziQNYGjJMWs/480x480.jp"
+    ],
+    [
+     "image",
+     503,
+     "https://cn2.mainnet.audiusindex.org/content/QmZ9yGLb2vXduNQjaSPPe3vnyBykggfkeCVZJzyqeuhFMq"
+    ],
+    [
+     "image",
+     500,
+     "http://www.lmrradio.co.uk/wp-content/uploads/2020/12/cropped-lmrlogo-new2-180x180.png"
+    ]
+   ]
+  },
+  {
+   "viewport": "360x780 mobile",
+   "remote_resource_errors": 28,
+   "remote_kinds": [
+    "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_UNSAFE_PORT",
+    "Failed to load resource: the server responded with a status "
+   ],
+   "failed_requests_sample": [
+    [
+     "image",
+     "https://shaivam.org/images/shaivam-logo-2015.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://prasarbharati.gov.in/wp-content/uploads/2020/04/cropped-pblogo-180x180.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://audius.zeogrid.com/content/QmQZMJtQBu8MJQQZgaaee8JXhFoeaT4hAwf6rUn63KXkoQ/480x480.",
+     "net::ERR_CONNECTION_CLOSED"
+    ],
+    [
+     "image",
+     "https://audius.zeogrid.com/content/QmQZMJtQBu8MJQQZgaaee8JXhFoeaT4hAwf6rUn63KXkoQ/480x480.",
+     "net::ERR_CONNECTION_CLOSED"
+    ],
+    [
+     "image",
+     "https://audius.zeogrid.com/content/QmQAacrnozsHg3uqXBzHc8MYj1vVc7PofJtZMg4cy2pgCb/480x480.",
+     "net::ERR_CONNECTION_CLOSED"
+    ],
+    [
+     "image",
+     "https://ahaliafm.com/assets/images/cs/logo2.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ]
+   ],
+   "http_errors_sample": [
+    [
+     "image",
+     500,
+     "http://mirchi.in/favicon-196x196.png"
+    ],
+    [
+     "image",
+     503,
+     "https://cn1.mainnet.audiusindex.org/content/QmUNwR7jspJr49PsRMTi8weCBTWrnxMHAdCvrW2kV3Qfwd"
+    ],
+    [
+     "image",
+     503,
+     "https://cn1.mainnet.audiusindex.org/content/QmUNwR7jspJr49PsRMTi8weCBTWrnxMHAdCvrW2kV3Qfwd"
+    ],
+    [
+     "image",
+     503,
+     "https://cn4.mainnet.audiusindex.org/content/QmdCXEchCdf7tzfPbDJdGLw6zXk2LFBFKfypUJRkpf8gVn"
+    ],
+    [
+     "image",
+     500,
+     "http://www.lmrradio.co.uk/wp-content/uploads/2020/12/cropped-lmrlogo-new2-180x180.png"
+    ],
+    [
+     "image",
+     400,
+     "https://v.monophonic.digital/content//data/user/0/co.audius.app/cache/29653656-b925-4b50-8"
+    ]
+   ]
+  },
+  {
+   "viewport": "1366x860 desktop",
+   "remote_resource_errors": 39,
+   "remote_kinds": [
+    "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_UNSAFE_PORT",
+    "Failed to load resource: the server responded with a status "
+   ],
+   "failed_requests_sample": [
+    [
+     "image",
+     "https://shaivam.org/images/shaivam-logo-2015.png",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "media",
+     "https://validator.eeba4a6ca56a0d87af802270217c2a51.r2.cloudflarestorage.com/28p/QmbncptYL5",
+     "net::ERR_ABORTED"
+    ],
+    [
+     "media",
+     "https://validator.eeba4a6ca56a0d87af802270217c2a51.r2.cloudflarestorage.com/6GA/QmQgMvQcRy",
+     "net::ERR_ABORTED"
+    ],
+    [
+     "image",
+     "https://v.audius.rickyrombo.com/content/QmeLcucqXQ2PviAUvQkfN8Y9WcHDrFaXV1TymACMY9A8cX/480",
+     "net::ERR_BLOCKED_BY_ORB"
+    ],
+    [
+     "image",
+     "https://audius.zeogrid.com/content/QmPD9uqWYuWyPYUkfdKxwQdRLY3BEySMBgK3AghYeCztLL/480x480.",
+     "net::ERR_CONNECTION_CLOSED"
+    ],
+    [
+     "media",
+     "https://validator.eeba4a6ca56a0d87af802270217c2a51.r2.cloudflarestorage.com/6GA/QmQgMvQcRy",
+     "net::ERR_ABORTED"
+    ]
+   ],
+   "http_errors_sample": [
+    [
+     "image",
+     500,
+     "http://mirchi.in/favicon-196x196.png"
+    ],
+    [
+     "image",
+     502,
+     "https://audius-nodes.com/content/QmTv5VuvdrgB2jvXBS3R5cnJ74LwwPEDa9CziQNYGjJMWs/480x480.jp"
+    ],
+    [
+     "image",
+     503,
+     "https://cn2.mainnet.audiusindex.org/content/QmZ9yGLb2vXduNQjaSPPe3vnyBykggfkeCVZJzyqeuhFMq"
+    ],
+    [
+     "image",
+     502,
+     "https://audius-nodes.com/content/QmRLRdaXZZkjToHnVLeo1mBBVzXPf3QfWuA7xCbMKBHCwJ/480x480.jp"
+    ],
+    [
+     "image",
+     500,
+     "http://www.lmrradio.co.uk/wp-content/uploads/2020/12/cropped-lmrlogo-new2-180x180.png"
+    ],
+    [
+     "image",
+     400,
+     "https://audius-creator-7.theblueprint.xyz/content//data/user/0/co.audius.app/cache/2965365"
+    ]
+   ]
+  }
+ ]
+}

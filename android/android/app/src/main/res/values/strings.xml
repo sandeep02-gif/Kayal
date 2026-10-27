@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kayal</string>
+    <string name="title_activity_main">Kayal</string>
+    <string name="package_name">com.shutterstrokes.kayal</string>
+    <string name="custom_url_scheme">com.shutterstrokes.kayal</string>
+</resources>

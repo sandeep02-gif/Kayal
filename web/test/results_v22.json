@@ -1,0 +1,227 @@
+[
+ [
+  "Version 2.2.0 (build 4) in app, meta and stored value",
+  true,
+  "['2.2.0', 4, '2.2.0', '2.2.0']"
+ ],
+ [
+  "Tab bar is a floating glass pill with 4 tabs (Home, Search, Library, YT Music)",
+  true,
+  "{'btns': ['home', 'search', 'library', 'ytm'], 'left': 12, 'gap': 10, 'h': 64, 'br': 32, 'bf': 'blur(24px) saturate(1.6)', 'pos': 'fixed'}"
+ ],
+ [
+  "Selection pill index follows the active tab",
+  true,
+  "[['1', 'search', 'v-search'], ['2', 'library', 'v-library'], ['3', 'ytm', 'v-ytm'], ['0', 'home', 'v-home']]"
+ ],
+ [
+  "System theme follows dark colour scheme",
+  true,
+  "['dark', 'rgb(15, 17, 21)']"
+ ],
+ [
+  "Light theme switches background/text and theme-color",
+  true,
+  "['light', 'rgb(243, 244, 248)', 'rgb(19, 22, 28)', '#f3f4f8']"
+ ],
+ [
+  "System theme follows light colour scheme",
+  true,
+  ""
+ ],
+ [
+  "Settings has Appearance (theme + artwork colours), YouTube Music section and shows 2.2.0 (build 4)",
+  true,
+  "{'t': True, 'y': True, 'ap': True, 'ver': True}"
+ ],
+ [
+  "Theme choice in Settings applies immediately",
+  true,
+  "['light', 'light']"
+ ],
+ [
+  "Theme choice persists after reload",
+  true,
+  ""
+ ],
+ [
+  "Home quick-tiles grid incl. YouTube Music tile",
+  true,
+  "[['Most played', 'grid'], ['More like this', 'grid'], ['Malayalam radio', 'grid'], ['Recently added', 'grid'], ['Downloads', 'grid'], ['YouTube Music', 'grid']]"
+ ],
+ [
+  "YouTube Music home tile opens the YT Music tab",
+  true,
+  ""
+ ],
+ [
+  "YT Music tab: starts \u201cNot signed in\u201d, \u201cfind current song\u201d disabled with nothing playing",
+  true,
+  "{'now': True, 'status': 'Not signed in', 'flag': False}"
+ ],
+ [
+  "Sign-in button opens Google sign-in externally with continue \u2192 music.youtube.com (no in-app WebView/password capture)",
+  true,
+  "['https://accounts.google.com/ServiceLogin?service=youtube&continue=https%3A%2F%2Fmusic.youtube.com%2F']"
+ ],
+ [
+  "Open YouTube Music \u2192 https://music.youtube.com/",
+  true,
+  "['https://music.youtube.com/']"
+ ],
+ [
+  "\u201cI'm signed in\u201d reminder flips status and is stored locally",
+  true,
+  "[True, 'Signed in (on your phone)']"
+ ],
+ [
+  "Search opens music.youtube.com/search?q=\u2026 with the query encoded",
+  true,
+  "['https://music.youtube.com/search?q=Ennu%20Ninte%20Moideen%20%26%20song']"
+ ],
+ [
+  "Recent YT Music searches are remembered (max 8) and re-open on tap",
+  true,
+  "['Ennu Ninte Moideen & song']"
+ ],
+ [
+  "Tapping a recent search opens it again",
+  true,
+  "['https://music.youtube.com/search?q=Ennu%20Ninte%20Moideen%20%26%20song']"
+ ],
+ [
+  "Jump-to tiles open YT Music Home/Explore/Library/Liked/History",
+  true,
+  "{'home': ['https://music.youtube.com/'], 'explore': ['https://music.youtube.com/explore'], 'library': ['https://music.youtube.com/library'], 'liked': ['https://music.youtube.com/playlist?list=LM'], 'history': ['https://music.youtube.com/history']}"
+ ],
+ [
+  "On Android the link goes through the native openUrl (ACTION_VIEW \u2192 YouTube Music app if installed)",
+  true,
+  "['https://music.youtube.com/']"
+ ],
+ [
+  "YT Music tab: touch targets \u226544px",
+  true,
+  "[]"
+ ],
+ [
+  "No horizontal overflow on YT Music tab",
+  true,
+  ""
+ ],
+ [
+  "A free Audius track plays under the new UI",
+  true,
+  ""
+ ],
+ [
+  "Artwork tint variables are set for the playing song",
+  true,
+  "{'t1': 'rgb(71, 98, 34)', 'ta': 'hsl(86 78% 66%)', 'mini': 'blur(24px) saturate(1.6)', 'sampled': 1}"
+ ],
+ [
+  "Cover colour was sampled on-device from the CORS-enabled Audius art",
+  true,
+  "1"
+ ],
+ [
+  "Mini player is glass (backdrop blur)",
+  true,
+  "blur(24px) saturate(1.6)"
+ ],
+ [
+  "Now Playing: colour-mesh background, large rounded art, art \u201cbreathes\u201d when playing",
+  true,
+  "{'pl': True, 'sc': 'matrix(1, 0, 0, 1, 0, 0)', 'br': '28px', 'bg': 'radial-gradient(120% 62% at 10% -4%, rgb(71, 98, 34) 0px, rg'}"
+ ],
+ [
+  "Art shrinks when paused",
+  true,
+  ""
+ ],
+ [
+  "\u201cColours follow the album art\u201d off removes the tint",
+  true,
+  "['hsl(86 78% 66%)', '#2dd4bf']"
+ ],
+ [
+  "Different songs without sampled art still get different colours",
+  true,
+  "['hsl(119 78% 66%)', 'hsl(133 78% 66%)', 'hsl(327 78% 66%)']"
+ ],
+ [
+  "Open in sheet (default) still lists JioSaavn, Spotify, YouTube Music",
+  true,
+  ""
+ ],
+ [
+  "With \u201cstraight to YouTube Music\u201d on, Open in skips the chooser",
+  true,
+  "[['https://music.youtube.com/search?q=Test%20Song%20Test%20Artist'], False]"
+ ],
+ [
+  "\u201cFind this in YouTube Music\u201d enabled while a song plays",
+  true,
+  "[False, 'Find \u201cInstrumental chill. Arly\u201d in YouTube Music']"
+ ],
+ [
+  "\u2026and opens a YT Music search for the playing song",
+  true,
+  "['https://music.youtube.com/search?q=Instrumental%20chill.%20Arly%20iconoschill']"
+ ],
+ [
+  "What's new 2.2.0 mentions new look, YouTube Music and links-only",
+  true,
+  ""
+ ],
+ [
+  "No network requests to YouTube/googlevideo from the app (links only)",
+  true,
+  "[]"
+ ],
+ [
+  "Source has no YouTube streaming/extraction/embed code",
+  true,
+  "[]"
+ ],
+ [
+  "No iframe/video element used",
+  true,
+  ""
+ ],
+ [
+  "360px: no horizontal overflow on home",
+  true,
+  ""
+ ],
+ [
+  "360px: no horizontal overflow on search",
+  true,
+  ""
+ ],
+ [
+  "360px: no horizontal overflow on library",
+  true,
+  ""
+ ],
+ [
+  "360px: no horizontal overflow on ytm",
+  true,
+  ""
+ ],
+ [
+  "360px: floating tab bar fits inside screen",
+  true,
+  "[12, 336]"
+ ],
+ [
+  "Desktop: sidebar nav (230px) with 4 entries still works",
+  true,
+  "{'w': 230, 'btn': 4, 'pillGone': 'block'}"
+ ],
+ [
+  "Zero console/page errors",
+  true,
+  "[]"
+ ]
+]

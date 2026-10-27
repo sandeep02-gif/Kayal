@@ -1,0 +1,12 @@
+{
+  "appId": "com.shutterstrokes.kayal",
+  "appName": "Kayal",
+  "webDir": "www",
+  "android": { "allowMixedContent": true, "backgroundColor": "#0f1115" },
+  "server": { "androidScheme": "https", "cleartext": true },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 900, "launchAutoHide": true, "backgroundColor": "#0f1115", "androidScaleType": "CENTER_CROP", "showSpinner": false, "splashFullScreen": false, "splashImmersive": false },
+    "StatusBar": { "backgroundColor": "#0f1115", "style": "DARK", "overlaysWebView": false },
+    "MediaSession": { "foregroundService": "duringPlayback" }
+  }
+}

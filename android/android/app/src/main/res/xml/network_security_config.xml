@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Internet radio streams and some artwork hosts are plain http. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors><certificates src="system"/></trust-anchors>
+    </base-config>
+</network-security-config>

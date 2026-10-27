@@ -1,0 +1,279 @@
+{
+ "results": [
+  [
+   "App version consistent (APP_VER = meta = stored) for update detection; build>=3",
+   true,
+   "['2.2.0', 4, '2.2.0', '2.2.0']"
+  ],
+  [
+   "Home \u201cFresh free finds\u201d row fills with ranked new songs",
+   true,
+   "[12, [['jathagam kattam', 'Astrologer Devika \u00b7 Public domain \u00b7 New \u00b7 Indian'], ['Karma Bhumi Bharat, Marathi, Raga-1', 'Ratnakar Narale \u00b7 CC BY-NC-ND 4.0 \u00b7 New \u00b7 Indian'], ['Karma Bhumi Bharat, Hindi, Raga-7', 'Ratnakar Narale \u00b7 CC BY-NC-ND 4.0 \u00b7 New \u00b7 Indian']]]"
+  ],
+  [
+   "Finder row says which free sources were checked and that ranking is on-device",
+   true,
+   "Ranked on this device from 288 new free songs \u00b7 Audius underground 25 \u00b7 Audius new 138 \u00b7 Audius trending 30 \u00b7 Internet Archive new 25 \u00b7 Internet Archive Indian 25 \u00b7 Wikimedia Commons 58 \u00b7 updated 07:34 PM"
+  ],
+  [
+   "Finder pulls from Audius + Internet Archive + Commons (\u22653 sources returned songs)",
+   true,
+   "[{'Audius underground': 25, 'Audius new': 138, 'Audius trending': 30, 'Internet Archive new': 25, 'Internet Archive Indian': 25, 'Wikimedia Commons': 58}, {'archive': 15, 'commons': 9, 'audius': 5}]"
+  ],
+  [
+   "Finder tracks carry freshness timestamps and non-Audius ones carry free licences",
+   true,
+   "[29, 29, 0]"
+  ],
+  [
+   "Local scoring: fresher > older; Malayalam > Indian > other; very short clips penalised",
+   true,
+   "{'fresh': 38.13987819333907, 'old': 2.136899736697455e-07, 'ml': 69.52510510981244, 'en': 31.52510510981244, 'ind': 51.52510510981244, 'short': 13.139878193339072}"
+  ],
+  [
+   "Local scoring learns from your likes (liked artist/genre scores higher)",
+   true,
+   "[38.13987819333907, 64.13987819333907]"
+  ],
+  [
+   "A finder song plays straight in Kayal",
+   true,
+   "['jathagam kattam', 'archive', 0.01, 1.58]"
+  ],
+  [
+   "\u201cFind new songs\u201d button refreshes the list and starts playing the ranked queue",
+   true,
+   "[29, 2.2, 0.12, 1.74]"
+  ],
+  [
+   "Artist names are shown on rows and are tappable links",
+   true,
+   "12"
+  ],
+  [
+   "Tapping an artist opens the artist page with songs, Follow and Open-in buttons",
+   true,
+   "{'name': 'Astrologer Devika', 'sub': '0 songs on Audius \u00b7 1 free-licence item on the Internet Archive', 'rows': 1, 'follow': True, 'ext': True}"
+  ],
+  [
+   "Artist search tab lists artists (Audius) ",
+   true,
+   "{'cre': 10, 'aus': 10}"
+  ],
+  [
+   "Artist page from search lists all of that artist's Audius songs",
+   true,
+   "{'name': 'Ambient Theory', 'rows': 8}"
+  ],
+  [
+   "Follow stores the artist locally (state + localStorage)",
+   true,
+   "[1, 'Following \u2713', 1]"
+  ],
+  [
+   "Home shows \u201cFrom artists you follow\u201d with that artist's songs",
+   true,
+   "{'chips': 1, 'rows': 8}"
+  ],
+  [
+   "Followed artists survive a reload (stored locally)",
+   true,
+   ""
+  ],
+  [
+   "Unfollow removes the row",
+   true,
+   ""
+  ],
+  [
+   "Now-playing artist name is a link",
+   true,
+   ""
+  ],
+  [
+   "Tapping the now-playing artist opens their page",
+   true,
+   ""
+  ],
+  [
+   "\u201cFilm & mainstream hits\u201d section lists chart songs with an Open-in action",
+   true,
+   "{'n': 16, 'first': 'Hriday Mein Jinke Sitaram', 'genres': ['Vishal Chaturvedi \u00b7 Bollywood', 'Vishal & Shekhar, Arijit Singh & Shilpa Rao \u00b7 Bollywood', 'A.R. Rahman, Arijit Singh, Shreya Ghoshal & Kumar Vishwas \u00b7 Bollywood', 'Sonu Nigam, Shaan & Shankar Mahadevan \u00b7 Bollywood', 'Suneel Lodhi \u00b7 Bollywood', 'Arijit Singh, Sachin-Jigar & Amitabh Bhattacharya \u00b7 Bollywood', 'Arijit Singh \u00b7 Bollywood', 'S"
+  ],
+  [
+   "Open-in sheet offers JioSaavn, Spotify and YouTube Music",
+   true,
+   "['JioSaavn', 'Spotify', 'YouTube Music']"
+  ],
+  [
+   "Open-in buttons hand off by search link only (JioSaavn / Spotify / YouTube Music URLs)",
+   true,
+   "['https://www.jiosaavn.com/search/Hriday%20Mein%20Jinke%20Sitaram%20Vishal%20Chaturvedi', 'https://open.spotify.com/search/Hriday%20Mein%20Jinke%20Sitaram%20Vishal%20Chaturvedi', 'https://music.youtube.com/search?q=Hriday%20Mein%20Jinke%20Sitaram%20Vishal%20Chaturvedi']"
+  ],
+  [
+   "Track menu has \u201cGo to artist\u201d and \u201cOpen in\u2026\u201d",
+   true,
+   "['next', 'queue', 'like', 'pl', 'offsave', 'sim', 'artist', 'ext']"
+  ],
+  [
+   "Settings shows \u201cKayal <version> (build n)\u201d",
+   true,
+   "['Kayal 2.2.0 (build 4)', 'Kayal 2.2.0 (build 4)']"
+  ],
+  [
+   "\u201cWhat's new\u201d sheet describes the new features",
+   true,
+   ""
+  ],
+  [
+   "Update from an older version clears stale caches and records the new version",
+   true,
+   "[['kayal-shell-v5'], '2.2.0', None]"
+  ],
+  [
+   "Service worker cache name bumped (kayal-shell-v5) so old shells are replaced",
+   true,
+   "kayal-shell-v5"
+  ],
+  [
+   "Fresh finds row still shows (from cache) with no network",
+   true,
+   ""
+  ],
+  [
+   "No console / page errors from the app",
+   true,
+   "[]"
+  ]
+ ],
+ "numbers": {
+  "finder": {
+   "n": 12,
+   "sub": "Ranked on this device from 288 new free songs \u00b7 Audius underground 25 \u00b7 Audius new 138 \u00b7 Audius trending 30 \u00b7 Internet Archive new 25 \u00b7 Internet Archive Indian 25 \u00b7 Wikimedia Commons 58 \u00b7 updated 07:34 PM",
+   "rows": [
+    [
+     "jathagam kattam",
+     "Astrologer Devika \u00b7 Public domain \u00b7 New \u00b7 Indian"
+    ],
+    [
+     "Karma Bhumi Bharat, Marathi, Raga-1",
+     "Ratnakar Narale \u00b7 CC BY-NC-ND 4.0 \u00b7 New \u00b7 Indian"
+    ],
+    [
+     "Karma Bhumi Bharat, Hindi, Raga-7",
+     "Ratnakar Narale \u00b7 CC BY-NC-ND 4.0 \u00b7 New \u00b7 Indian"
+    ],
+    [
+     "The Recovery Kernel- 3MMC \u0d09\u0d2a\u0d2f\u0d47\u0d3e\u0d17 \u0d17\u0d48\u0d21\u0d4d au",
+     "J R Token \u00b7 CC BY-ND 4.0 \u00b7 New \u00b7 Malayalam"
+    ],
+    [
+     "telefon er\u0151s\u00edt\u0151 1982",
+     "szajnos ismeretlen \u00b7 CC0 \u00b7 New"
+    ],
+    [
+     "AMIGOS DE ULTRA NIGHT 26 OCTUBRE",
+     "RADIO VOX FM 102.9 \u00b7 Public domain \u00b7 New"
+    ],
+    [
+     "Movie Time  Curse of Crom  The Legend of",
+     "13 O'Clock \u00b7 CC BY-NC-ND 4.0 \u00b7 New"
+    ],
+    [
+     "Woods of Ypres 6.9.11",
+     "Woods of Ypres \u00b7 CC BY-NC 4.0 \u00b7 New"
+    ],
+    [
+     "Untitled I",
+     "Wall Noise Action \u00b7 CC BY-ND 4.0 \u00b7 New"
+    ],
+    [
+     "01 - The Tabernacle in the Wilderness: D",
+     "Various \u00b7 Public domain \u00b7 New"
+    ],
+    [
+     "Comfortably Numb Re-Imagined (Radio Edit",
+     "Gianna \u00b7 CC0 \u00b7 New"
+    ],
+    [
+     "E:\\Dhamma Talks\\Most_Ven._Kukulpane_Suda",
+     "Aruna Manathunge \u00b7 CC BY-NC-ND 4.0 \u00b7 New"
+    ]
+   ]
+  },
+  "finder_detail": {
+   "srcs": [
+    "Audius underground",
+    "Audius new",
+    "Audius trending",
+    "Internet Archive new",
+    "Internet Archive Indian",
+    "Wikimedia Commons"
+   ],
+   "counts": {
+    "Audius underground": 25,
+    "Audius new": 138,
+    "Audius trending": 30,
+    "Internet Archive new": 25,
+    "Internet Archive Indian": 25,
+    "Wikimedia Commons": 58
+   },
+   "n": 29,
+   "by": {
+    "archive": 15,
+    "commons": 9,
+    "audius": 5
+   },
+   "lic": 0,
+   "ts": 29,
+   "top": [
+    [
+     "jathagam kattam",
+     "New \u00b7 Indian",
+     62.8
+    ],
+    [
+     "Karma Bhumi Bharat, Marathi, R",
+     "New \u00b7 Indian",
+     61.2
+    ],
+    [
+     "Karma Bhumi Bharat, Hindi, Rag",
+     "New \u00b7 Indian",
+     61.2
+    ],
+    [
+     "The Recovery Kernel- 3MMC \u0d09\u0d2a\u0d2f\u0d47",
+     "New \u00b7 Malayalam",
+     47.6
+    ],
+    [
+     "telefon er\u0151s\u00edt\u0151 1982",
+     "New",
+     42.9
+    ]
+   ]
+  },
+  "artist": {
+   "name": "Astrologer Devika",
+   "sub": "0 songs on Audius \u00b7 1 free-licence item on the Internet Archive",
+   "rows": 1,
+   "follow": true,
+   "ext": true
+  },
+  "hits": {
+   "n": 16,
+   "first": "Hriday Mein Jinke Sitaram",
+   "genres": [
+    "Vishal Chaturvedi \u00b7 Bollywood",
+    "Vishal & Shekhar, Arijit Singh & Shilpa Rao \u00b7 Bollywood",
+    "A.R. Rahman, Arijit Singh, Shreya Ghoshal & Kumar Vishwas \u00b7 Bollywood",
+    "Sonu Nigam, Shaan & Shankar Mahadevan \u00b7 Bollywood",
+    "Suneel Lodhi \u00b7 Bollywood",
+    "Arijit Singh, Sachin-Jigar & Amitabh Bhattacharya \u00b7 Bollywood",
+    "Arijit Singh \u00b7 Bollywood",
+    "S. Aishwarya, S Soundarya, Sruthi Ranjani & S.S. Thaman \u00b7 Bollywood"
+   ]
+  }
+ }
+}

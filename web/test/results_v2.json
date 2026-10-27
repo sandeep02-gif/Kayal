@@ -1,0 +1,268 @@
+{
+ "results": [
+  [
+   "Home has new sections: AIR radio, devotional radio, Malayalam/Carnatic/Bhajan free-licence archive lists",
+   true,
+   "{'#archMl .row': 10, '#archCar .row': 10, '#archBhj .row': 10, '#archHome .row': 8, '#radioAir .card': 24, '#radioDev .card': 24, '#radioMl .card': 20, '#radioIn .card': 20}"
+  ],
+  [
+   "Free-licence archive rows show their licence (CC / Public domain)",
+   true,
+   "[10, 10, 10]"
+  ],
+  [
+   "More Audius genres (24 chips) and Folk loads",
+   true,
+   "24"
+  ],
+  [
+   "Search All includes Wikimedia Commons results",
+   true,
+   "{'archive': 20, 'apl': 10, 'aus': 10, 'audius': 23, 'commons': 18, 'radio': 30}"
+  ],
+  [
+   "Commons rows carry free licences (CC / Public domain)",
+   true,
+   "[[\"Outing- Chinese kids' Piano Song - Junjun's edition (selected from real piano lesson)\", 'Jason M. C., Han \u00b7 CC BY-SA 4.0'], [\"Cole Porter\u2019s \u201cI Love You\u201d - JMC, Han's Piano Edition\", 'Jason M. C., Han \u00b7 CC BY-SA 4.0'], ['Blue Danube (Exercise and variations-collections in piano) JMC, Han', 'Jason M. C., Han \u00b7 CC BY-SA 4.0']]"
+  ],
+  [
+   "Commons (Ogg/Opus) track plays",
+   true,
+   "[\"Outing- Chinese kids' Piano Song - Junjun's editio\", 'CC BY-SA 4.0', 0.22, 1.84]"
+  ],
+  [
+   "Archive licence logic: CC item \u2192 downloadable, pre-1926 78rpm \u2192 public domain, 1950s 78rpm \u2192 NOT downloadable",
+   true,
+   "{'cc': ['CC BY-ND 3.0', 1], 'pd': ['Public domain (pre-1926)', 1], 'modern78': ['', 0]}"
+  ],
+  [
+   "All India Radio list has stations (HLS now supported)",
+   true,
+   "[24, 23]"
+  ],
+  [
+   "An HLS (m3u8) AIR station plays via hls.js",
+   true,
+   "[['All India Radio News 24X7', False], ['All India Radio AIR Punjabi', True]]"
+  ],
+  [
+   "A Malayalam radio station plays",
+   true,
+   "AR RADIO"
+  ],
+  [
+   "Playlist rename (library \u22ef menu)",
+   true,
+   ""
+  ],
+  [
+   "Playlist duplicate",
+   true,
+   "[['Night ragas (copy)', 4], ['Night ragas', 4]]"
+  ],
+  [
+   "Playlist cover pick (gradient)",
+   true,
+   "['{\"g\":3}', 'data:image/svg+xml,%3C']"
+  ],
+  [
+   "Playlist delete (copy removed, original kept)",
+   true,
+   ""
+  ],
+  [
+   "Drag-to-reorder songs (row 3 \u2192 top)",
+   true,
+   "[['81097371', '80317990', '79161523', '81111479'], ['79161523', '81097371', '80317990', '81111479']]"
+  ],
+  [
+   "Drag-to-reorder with a finger (touch events), order persisted",
+   true,
+   "[['79161523', '81097371', '80317990', '81111479'], ['81097371', '80317990', '79161523', '81111479']]"
+  ],
+  [
+   "M3U export (#EXTM3U, one #EXTINF + https URL per song)",
+   true,
+   "['Night ragas.m3u', 4, 4]"
+  ],
+  [
+   "Auto playlist: Most played (ordered by play count)",
+   true,
+   "[\"Vocal Approach integrated with piano in the usage of 299 No. 27 - Czerny's Etude for classroom and life\", 'Piano-phrase']"
+  ],
+  [
+   "Auto playlist: Recently added (newest first, from likes + playlists)",
+   true,
+   "['Liszt- sonata In B Minor (piano - Jorge Bolet - 1960)', \"Outing- Chinese kids' Piano Song - Junjun's edition (selected from real piano lesson)\", \"Cole Porter\u2019s \u201cI Love You\u201d - JMC, Han's Piano Edition\"]"
+  ],
+  [
+   "Auto playlist: Malayalam radio (live stations)",
+   true,
+   "20"
+  ],
+  [
+   "Auto playlist can be saved as a normal playlist",
+   true,
+   ""
+  ],
+  [
+   "Auto playlist: More like this (based on current song)",
+   true,
+   "39"
+  ],
+  [
+   "Play counting starts after 15 s of listening",
+   true,
+   "[1]"
+  ],
+  [
+   "Offline save of a free-licence (Commons) track \u2192 stored in IndexedDB",
+   true,
+   "[[\"Outing- Chinese kids' Piano So\", 962651, 'CC BY-SA 4.0']]"
+  ],
+  [
+   "Saved track shows SAVED badge and menu offers \u201cRemove offline copy\u201d",
+   true,
+   ""
+  ],
+  [
+   "Tracks without a download licence (Audius \u201call rights reserved\u201d, no artist flag) have NO offline option",
+   true,
+   "['under a creative commons licen', 0]"
+  ],
+  [
+   "Live radio has no offline option",
+   true,
+   ""
+  ],
+  [
+   "Audius track with CC licence / artist download flag can be saved offline",
+   true,
+   "[\"Huntin' Koch (Creative Commons\", 'CC BY-NC-SA', True, True]"
+  ],
+  [
+   "OFFLINE (network cut, app reloaded): saved track plays from Downloads (blob: source)",
+   true,
+   "['Offline \u00b7 2 songs saved on this device', 0.25, 1.88, 'blob:', [False, True]]"
+  ],
+  [
+   "Remove offline copy",
+   true,
+   "1"
+  ],
+  [
+   "EQ off: plain element used (no Web Audio graph)",
+   true,
+   "audio"
+  ],
+  [
+   "EQ on: switches to the Web Audio element and keeps playing",
+   true,
+   "{'active': True, 'id': 'audioEq', 'state': 'running'}"
+  ],
+  [
+   "EQ is audible: +12 dB at 62 Hz makes a 62 Hz tone louder, \u221212 dB quieter (analyser RMS)",
+   true,
+   "{'flat_ish_bass_preset': 0.0312, '+12dB': 0.1482, '-12dB': 0.0094}"
+  ],
+  [
+   "EQ preset \u201cBass boost\u201d sets biquad gains (+6 dB lowshelf)",
+   true,
+   "[6, 5, 4, 2, 0, 0, 0, 0, 0, 0]"
+  ],
+  [
+   "EQ band isolation: 4 kHz tone not affected by a \u221212 dB cut at 62 Hz (same level as flat EQ)",
+   true,
+   "[0.0306, 0.0306]"
+  ],
+  [
+   "EQ on with a Wikimedia Commons track: plays through the EQ graph",
+   true,
+   "[True, True, 0.29, 1.91]"
+  ],
+  [
+   "EQ on with an Internet Archive track: plays through the EQ graph",
+   true,
+   "[True, True, 2.03, 3.86]"
+  ],
+  [
+   "EQ on with an Audius track: plays (through EQ if CORS allows, audible, else plays flat)",
+   true,
+   "[True, True, 0.0781, 4.29, 5.98]"
+  ],
+  [
+   "EQ on with live radio: station still plays (EQ applied only if the host allows CORS; otherwise plays flat)",
+   true,
+   "['AR RADIO', True]"
+  ],
+  [
+   "EQ settings persist after reload",
+   true,
+   "[True, 'Flat']"
+  ],
+  [
+   "EQ can be turned off again",
+   true,
+   ""
+  ],
+  [
+   "Repeated search is served from cache (no new network request)",
+   true,
+   "[1, 1, 3]"
+  ],
+  [
+   "Home lists render instantly from cache (even with no network)",
+   true,
+   "0.09s to 5+ rows, offline"
+  ],
+  [
+   "Faster warm start: first rows appear from cache",
+   true,
+   "{'cold': 0.25, 'warm': 0.1}"
+  ],
+  [
+   "Bigger now-playing artwork (>=340 px wide at 412 px viewport; was ~414\u00b70.46h)",
+   true,
+   "342.239990234375"
+  ],
+  [
+   "Service worker v5 caches the shell incl. hls.light.min.js",
+   true,
+   "['kayal-shell-v5']"
+  ],
+  [
+   "No console / page errors from the app",
+   true,
+   "[]"
+  ]
+ ],
+ "numbers": {
+  "cold_first_rows_s": 0.25,
+  "home": {
+   "#archMl .row": 10,
+   "#archCar .row": 10,
+   "#archBhj .row": 10,
+   "#archHome .row": 8,
+   "#radioAir .card": 24,
+   "#radioDev .card": 24,
+   "#radioMl .card": 20,
+   "#radioIn .card": 20
+  },
+  "air_stations": 24,
+  "audius_scan": {
+   "n": 126,
+   "downloadable": 29
+  },
+  "storage_estimate": [
+   1522502,
+   10738940742
+  ],
+  "eq_rms_62Hz_tone": {
+   "flat_ish_bass_preset": 0.0312,
+   "+12dB": 0.1482,
+   "-12dB": 0.0094
+  },
+  "offline_reload_rows_s": 0.09,
+  "warm_first_rows_s": 0.1
+ }
+}
