@@ -1,0 +1,17 @@
+{
+  "name": "kayal",
+  "version": "2.2.0",
+  "description": "Kayal - a personal Android music player (Capacitor) using legal free music sources.",
+  "private": true,
+  "author": "Sandeep",
+  "repository": { "type": "git", "url": "https://github.com/sandeep02-gif/Kayal.git" },
+  "scripts": {
+    "serve": "python3 -m http.server 8080 --directory web",
+    "android:install": "npm --prefix android install",
+    "android:sync": "python3 android/sync_android.py && cd android && npx cap sync android",
+    "android:build": "cd android/android && ./gradlew assembleRelease",
+    "android:debug": "cd android/android && ./gradlew assembleDebug",
+    "test": "python3 web/test/kayal_e2e.py"
+  },
+  "engines": { "node": ">=20" }
+}
